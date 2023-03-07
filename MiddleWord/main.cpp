@@ -1,14 +1,19 @@
-//
-//  main.cpp
-//  MiddleWord
-//
-//  Created by Nyi Htet on 3/7/23.
-//
-
 #include <iostream>
+#include <iomanip>
+#include <string>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+int main()
+{
+    cout << "enter a word: ";
+    string response;
+    cin >> response;
+    if(response.length() % 2 == 1){  // if string length is odd, just divide by 2
+        cout << response.substr(response.length()/2,1) << endl;
+    }
+    else {                           // if string length is even, divide by 2 and reduce one for first middle word
+        cout << response.substr(response.length()/2 - 1,2) << endl;
+    }
     return 0;
 }
